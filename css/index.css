@@ -121,3 +121,22 @@ footer span {
     bottom: 20px;
     right: 5px;
 }
+
+.change_color {
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+}
+.change_color ul li {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 50%;
+}
+.change_color ul li:nth-child(1) {
+    background-color: #a61b29;
+}
+.change_color ul li:nth-child(2) {
+    background-color: #648e93;
+}
