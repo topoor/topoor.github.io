@@ -1,0 +1,123 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+}
+.w {
+    width: 800px;
+    margin: 10px auto;
+}
+.w .hello {
+    font-size: 25px;
+    height: 100px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 30px;
+    margin: 0;
+    line-height: 40px;
+    background-color: #495c69;
+
+}
+
+/* 导航栏 */
+.nav {
+    margin-top: 5px;
+    height: 40px;
+    background-color: #93b5cf;
+}
+.nav .nav_ul {
+    position: relative;
+    list-style: none;
+    width: 400px;
+    height: 40px;
+}
+.nav .nav_ul li {
+    float: left;
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+.nav_ul li .bd {
+    display: none;
+}
+/* 仓库 */
+.notes .bd {
+    width: 220px;
+    height: 180px;
+    position: absolute;
+    top: 40px;
+    border-radius: 0 5px 5px 5px;
+    background-color: #495c69;
+    box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, .3);
+}
+.notes .bd ul {
+    margin: 5px;
+}
+.notes .bd ul li {
+    width: 100px;
+}
+.notes .bd dl dt {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.notes .bd dl dd {
+    height: 40px;
+    line-height: 36px;
+    font-size: 14px;
+}
+
+/* demo */
+.demo {
+    position: relative;
+}
+.demo .bd {
+    padding: 10px 0;
+    width: 120px;
+    list-style: none;
+    border-radius: 0 5px 5px 5px;
+    background-color: #495c69;
+    box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, .3);
+
+}
+.demo ul {
+    margin: 5px;
+}
+.demo .bd ul li {
+    float: none;
+    height: 40px;
+    line-height: 36px;
+    font-size: 16px;
+}
+.demo .bd ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.content {
+    margin-top: 10px;
+    height: 200px;
+    background-color: #d0dfe6;
+}
+footer {
+    position: relative;
+    margin-top: 5px;
+    height: 300px;
+    color: #fff;
+    background-color: #495c69;
+}
+footer span {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+}

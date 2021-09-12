@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计时器</title>
+    <style>
+        .time {
+            width: 600px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .time ul {
+            list-style: none;
+        }
+        .time li {
+            width: 500px;
+            height: 60px;
+            border: 1px solid #ccc;
+            position: relative;
+            line-height: 30px;
+        }
+        .start span,
+        .end span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            color: white;
+            background-color: #000;
+        }
+        .divide {
+            position: absolute;
+            top: 10px;
+            left: 225px;
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #000;
+            font-weight: 700;
+            background-color: #ccc;
+        }
+        .start {
+            position: absolute;
+            top: 10px;
+            left: 100px;
+        }
+        .end {
+            position: absolute;
+            top: 10px;
+            right: 100px;
+        }
+        input {
+            width: 200px;
+            height: 25px;
+            outline: none;
+            border: 1px solid #666;
+            margin: 10px;
+        }
+        button {
+            margin-left: 5px;
+        }
+        .clock {
+            width: 500px;
+            border: 1px solid #ccc;
+            margin: 10px 40px;
+            line-height: 30px;
+        }
+        .clock p {
+            text-align: left;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        点击开始后，开始计时
+        点击暂停，则停止计时，并且新产生一个计时记录，直到下一个暂停
+        结束后结束程序，输出总计时
+     -->
+    <div class="time">
+        <input type="text" placeholder="事件">
+        <button class="start_btn">开始</button>
+        <button class="stop_btn">暂停</button>
+        <button class="end_btn">结束</button>
+        <ul>
+            <li>
+                <span class="start">
+                    <span class="Hour">00</span>
+                    <span class="Minute">00</span>
+                    <span class="Second">00</span>
+                </span>
+                <span class="divide">----</span>
+                <span class="end">
+                    <span class="Hour">00</span>
+                    <span class="Minute">00</span>
+                    <span class="Second">00</span>
+                </span>
+            </li>
+        </ul>
+        <div class="clock">
+            <p>今日份打卡：</p>
+        </div>
+    </div>
+</body>
+    <script>
+        var h0 = h = 0;
+        var m0 = m = 0;
+        var s0 = s = 0;
+        var timer = null;
+
+        // 点击开始后 开始计时
+        var start = document.querySelector('.start_btn');
+        var startTime = document.querySelector('.start').querySelectorAll('span');
+        var endTime = document.querySelector('.end').querySelectorAll('span');
+
+        function countTime() {
+            s++;
+            if (s === 60) {
+                m++;
+                s = 0;
+            }
+            if (m === 60) {
+                h++;
+                m = 0;
+            }
+            endTime[0].innerHTML = h < 10 ? '0' + h : h;
+            endTime[1].innerHTML = m < 10 ? '0' + m : m;
+            endTime[2].innerHTML = s < 10 ? '0' + s : s;
+            h0 = h;
+            m0 = m;
+            s0 = s;
+            
+        }
+
+        start.addEventListener('click',function() {
+            console.log('开始计时');
+            startTime[0].innerHTML = h0 < 10 ? '0' + h0 : h0;
+            startTime[1].innerHTML = m0 < 10 ? '0' + m0 : m0;
+            startTime[2].innerHTML = s0 < 10 ? '0' + s0 : s0;
+            console.log(s0);
+            console.log(startTime[2].innerHTML);
+            timer = setInterval(countTime,1000);
+        });
+
+        var count = 0;
+        // 点击暂停 暂停计时
+        var stop = document.querySelector('.stop_btn');
+        stop.addEventListener('click', stopTime);
+        function stopTime() {
+            clearInterval(timer);
+            console.log('已暂停');
+            count++;           
+        }
+
+        //点击结束 输出计时结果
+        var end = document.querySelector('.end_btn');
+        end.addEventListener('click', function() {
+            console.log('退出计时');
+            //创建新的li
+            clearInterval(timer);
+            var li = document.createElement('li');
+            var ul = document.querySelector('ul');
+            ul.appendChild(li);
+            var thing = document.querySelector('input');
+            li.innerHTML = '本次 <strong>' + thing.value + '</strong> 共累计 ' + h + ' 时' + m + ' 分 ' + s + ' 秒, 期间共暂停 ' + count + ' 次<br>欢迎下次使用~';
+
+            var daka = document.querySelector('.clock');
+            daka.innerHTML += thing.value + ' -> ' + h + ' 时' + m + ' 分 ' + s + ' 秒<br>';
+            h0 = h = 0;
+            m0 = m = 0;
+            s0 = s = 0;
+            count = 0;
+        });
+
+    </script>
+</html>
