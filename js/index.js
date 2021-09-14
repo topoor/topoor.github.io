@@ -12,11 +12,11 @@ $(function() {
     })
     $('.blue').on('click', function() {
         console.log('切换蓝色主题');
-        $('.hello').css('background-color','#93b5cf')
-        $('.nav').css('background-color','#c5708b')
+        $('.hello').css('background-color','#495c69')
+        $('.nav').css('background-color','#93b5cf')
         $('.bd').css('background-color','#495c69')
         $('.content').css('background-color','#d0dfe6')
-        $('footer').css('background-color','#93b5cf')
+        $('footer').css('background-color','#495c69')
     })
 
     // nav 的 li
