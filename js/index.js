@@ -59,10 +59,11 @@ $(function() {
     })
 
     // 跳转
-    $('.demo a').eq(0).prop('href','./demo/计时器移动端.html')
+    $('.notes a').prop('href','./demo/note/note.html');
+    $('.timer a').prop('href','./demo/计时器移动端.html');
     $('.notes .h dd').eq(0).on('click', function() {
         console.log('跳转');
-        location.href = './notes/表格.txt'
-    })
+        location.href = './notes/表格.txt';
+    });
 
 })
