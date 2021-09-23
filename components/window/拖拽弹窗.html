@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .load {
+            text-align: center;
+        }
+        .loading {
+            position: absolute;
+            left: 200px;
+            top: 100px;
+            width: 500px;
+            height: 300px;
+            background-color: white;
+            text-align: center;
+            box-shadow: 10px 10px 10px 2px rgba(0,0,0,.3);
+            display: none;
+        }
+        .loading .title {
+            width: 500px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .loading ul {
+            list-style: none;
+            margin-top: 30px;
+        }
+        .loading ul li {
+            border: 1px solid #999;
+            text-align: right;
+            margin-top: 10px;
+            margin-right: 30px;
+        }
+        .loading ul li input {
+            width: 350px;
+            height: 30px;
+            outline: none;
+        }
+        .loading button {
+            width: 150px;
+            height: 30px;
+            margin-top: 50px;
+        }
+        .loading .close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 5px 5px 10px 2px rgba(0,0,0,.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="load">
+        点击，弹出登录框
+    </div>
+    <div class="loading">
+        <div class="title">登录会员</div>
+        <ul>
+            <li>
+                <label for="">用户名：</label>
+                <input type="text" placeholder="请输入用户名">
+            </li>
+            <li>
+                <label for="">密码：</label>
+                <input type="text" placeholder="请输入登录密码">
+            </li>
+        </ul>
+        <button>登录</button>
+        <div class="close">x</div>
+    </div>
+</body>
+    <script>
+        var load = document.querySelector('.load');
+        var loading = document.querySelector('.loading');
+        var body = document.body;
+        load.addEventListener('click', function() {  
+            body.style.backgroundColor = '#ccc';
+            loading.style.display = 'block';
+        });
+        var close = document.querySelector('.close');
+        close.addEventListener('click', function() {
+            body.style.backgroundColor = '';
+            loading.style.display = 'none';
+        })
+
+        //拖动
+        //先写个跟随鼠标移动的
+        var body = document.body;
+        var title = document.querySelector('.title');
+        title.addEventListener('mousedown', function(e) {
+            body.style.cursor = 'move';
+            var x0 = e.pageX - loading.offsetLeft;
+            var y0 = e.pageY - loading.offsetTop;
+            console.log(x0);
+            document.addEventListener('mousemove', move);
+            function move(event) {
+                var x = event.pageX - x0;
+                var y = event.pageY - y0;
+                loading.style.left = x + 'px';
+                loading.style.top = y + 'px';
+            }
+            document.addEventListener('mouseup', function() {
+                document.removeEventListener('mousemove', move);
+            })
+        })
+    </script>
+</html>

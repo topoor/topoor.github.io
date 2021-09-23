@@ -6,83 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>topoor的垃圾堆</title>
     <link rel="stylesheet" href="./css/index.css">
-    <script src="./js/jquery.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./jquery.js"></script>
 
-    <!-- 引入favicon图标 -->
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 
 </head>
 <body>
-    <!---->
-    <div class="w">
-        <div class="hello">
-            <p>Hello</p>
-            <p>Welcome to my Web site</p> 
-        </div>
-        <div class="nav">
-            <ul class="nav_ul">
-                <li>首页</li>
-                <li class="notes">
-                    <div class="hd">仓库</div>
-                    <div class="bd">
-                        <ul>
-                            <li>
-                                <dl class="h">
-                                    <dt>HTML</dt>
-                                    <dd>表格</dd>
-                                    <dd>表单</dd>
-                                    <dd>列表</dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl class="c">
-                                    <dt>CSS</dt>
-                                    <dd>盒子模型</dd>
-                                    <dd>定位和隐藏</dd>
-                                    <dd>浮动</dd>
-                                </dl>
-                            </li>
-                            <li>
+    <nav>
+        <div class="head">首页</div>
+        <ul>
+            <!-- 平时的笔记 -->
+            <li class="notes">
+                <div class="hd">仓库</div>
+                <div class="bd">
+                    <table class="list">
+                        <thead>
+                            <tr>
+                                <th>HTML</th>
+                                <th>CSS</th>
+                                <th>javaScript</th>
+                                <th>Node.js</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="one">
+                                <td><a href="./notes/表格.txt">表格</a></td>
+                                <td><a href="./notes/css 盒子模型.txt">盒子模型</a></td>
+                                <td><a href="./notes/运算符、循环、判断等.txt">运算符/循环/判断</a></td>
+                                <td><a href="./notes/服务器端基本概念.txt">服务器基本概念</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:;">表单</a></td>
+                                <td><a href="javascript:;">定位/隐藏</a></td>
+                                <td><a href="javascript:;">对象</a></td>
+                                <td><a href="javascript:;">node开发概述</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:;">列表</a></td>
+                                <td><a href="javascript:;">浮动</a></td>
+                                <td><a href="javascript:;">数组/函数</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:;">html5</a></td>
+                                <td><a href="javascript:;">css3</a></td>
+                                <td><a href="javascript:;">DOM</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:;"></a></td>
+                                <td><a href="javascript:;"></a></td>
+                                <td><a href="javascript:;">BOM</a></td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                    
+                </div>
+                
+            </li>
+            <!-- 比较完整的demo -->
+            <li class="demos">
+                <div class="hd">Demo</div>
+                <div class="bd">
+                    <ul>
+                        <li><a href="./demo/note/note.html">博客模板</a></li>
+                        <li><a href="./demo/timer/计时器移动端.html">计时器</a></li>
+                        <li><a href="#">others...</a></li>
 
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="demo">
-                    <div class="hd">demo</div>
-                    <div class="bd">
-                        <ul>
-                            <li class="notes">
-                                <a href="javascript:;">博客模板</a>
-                            </li>
-                            <li class="timer">
-                                <a href="javascript:;">计时器</a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">others</a>
-                            </li>
-                            <li>
-                                ……
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>待续 ...</li>
-            </ul>
-        </div>
-         <div class="content">
-         </div>
-         <footer>
-            <span>仍在设计布局，敬请期待 ...</span>
-         </footer>
-         <div class="change_color">
-             <ul>
-                 <li class="red"></li>
-                 <li class="blue"></li>
-             </ul>
-         </div>
+                    </ul>
+                </div>
+            </li>
+            <!-- 模块练习 -->
+            <li class="components">
+                <div class="hd">组件设计</div>
+                <div class="bd">
+                    <ul>
+                        <li class="nav-list"><a href="./components/nav/nav.html">导航</a></li>
+                        <li class="window">窗口</li>
+                        <li><a href="#">others...</a></li>
+
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="search">
+        <input type="text" placeholder="topoor的垃圾堆">
+        <button>查找</button>
     </div>
-    
 </body>
+    <script src="./js/index.js"></script>
 </html>

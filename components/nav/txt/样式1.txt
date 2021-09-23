@@ -1,0 +1,11 @@
+<ul>
+    <li class="icon">icon</li>
+    <li class="search">
+        <input type="text" placeholder="表格">
+        <button>查找</button>
+    </li>
+    <li class="registered">
+        <span>登录</span>
+        <span>注册</span>
+    </li>
+</ul>
