@@ -1,7 +1,7 @@
 <ul>
     <li class="icon">icon</li>
     <li class="search">
-        <input type="text" placeholder="表格">
+        <input type="text" placeholder="搜索内容">
         <button>查找</button>
     </li>
     <li class="registered">
