@@ -143,6 +143,34 @@ nav li:hover .hd::before {
     background-color: rgba(255, 255, 255, .3);
 
 }
+
+/* 小日记 */
+.record .bd {
+    display: none;
+}
+.record:hover .bd {
+    display: block;
+}
+.record .bd ul {
+    overflow: hidden;
+    margin-left: 30px;
+    width: 150px;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(0, 0, 0, .5);
+
+}
+.record .bd ul li {
+    float: none;
+    width: 150px;
+    font-size: 18px;
+
+
+}
+.record .bd ul li:hover {
+    background-color: rgba(255, 255, 255, .3);
+
+}
+
 /* 搜索栏 */
 .search {
     position: absolute;
