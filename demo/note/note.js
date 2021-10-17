@@ -311,5 +311,16 @@ css3可以通过 box-sizing 来指定盒模型，有2个值：content-box/border
     let content = document.querySelector('.right').querySelector('section');
     content.innerText = text;
 
+    // 登录框
+    $('.registered .load').on('click', function() {
+        $('.w').toggleClass('filter');
+        $('.login').toggleClass('block');
+        $('.mask').toggleClass('block');
+    });
+    $('.login .close span').on('click', function() {
+        $('.w').toggleClass('filter');
+        $('.login').toggleClass('block');
+        $('.mask').toggleClass('block');
+    });
     
 })

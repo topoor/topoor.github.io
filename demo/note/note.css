@@ -1,10 +1,24 @@
 
+@font-face {
+    font-family: "iconfont"; /* Project id  */
+    src: url('./font_q6q1yfrejff/iconfont.ttf?t=1634038774772') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
+a {
+    text-decoration: none;
+}
 body {
     min-width: 1080px;
     background: url(../../images/body_bg2.jpg) no-repeat;
@@ -21,7 +35,7 @@ nav {
     padding-left: 30px;
     background-color: rgba(51, 51, 51, 0.9);
     box-shadow: 1px 1px 4px 3px rgba(0, 0, 0, .3);
-
+    z-index: 10;
 }
 nav .title {
     float: left;
@@ -70,7 +84,9 @@ nav .registered span {
     font-weight: 700;
     opacity: .7;
 }
-
+nav .registered span a {
+    color: #ddd;
+}
 
 
 .w {
@@ -83,7 +99,7 @@ nav .registered span {
 }
 aside {
     position: fixed;
-    top: 50px;
+    top: 0;
     left: 0;
     width: 90px;
     height: 100%;
@@ -93,7 +109,7 @@ aside {
 }
 aside .massage {
     width: 100px;
-    margin-top: 50px;
+    margin-top: 100px;
     transition: all 1s;
 
 }
@@ -147,4 +163,57 @@ aside .content {
     text-align: center;
     font-size: 30px;
     color: #555;
+}
+
+/* 登录弹窗 */
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+.login {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 100px auto;
+    background-color: #fff;
+    box-shadow: 1px 2px 3px 1px rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+.login .close {
+    width: 100%;
+    height: 30px;
+}
+.login .close span {
+    float: right;
+    font-family: "iconfont"; /* Project id  */
+    font-size: 25px;
+    color: red;
+}
+.login .submit {
+    width: 100px;
+    height: 34px;
+    margin: 10px 0;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.filter {
+    filter: blur(2px);
+}
+.none {
+    display: none;
+}
+.block {
+    display: block;
 }
